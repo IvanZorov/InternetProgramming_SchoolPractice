@@ -10,4 +10,7 @@ $(document).ready(function() {
 //task_04	
 	$("ul#menu-top-level-menu").append("<li> <a> new button </a> </li>");
 
+//task_05
+	$("#footer").prepend('<div id="dynamiccontent"></div>');
+	
 });
