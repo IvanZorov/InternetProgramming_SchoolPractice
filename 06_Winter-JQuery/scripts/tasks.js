@@ -12,5 +12,8 @@ $(document).ready(function() {
 
 //task_05
 	$("#footer").prepend('<div id="dynamiccontent"></div>');
+
+//task_06
+	$("#dynamiccontent").append('<input id="textinput"></input>');	
 	
 });
