@@ -27,4 +27,10 @@ $(document).ready(function() {
 		alert("hello world");
 	});	
 
+//task_10
+	$("ul#menu-top-level-menu a:last").click(function() {
+		var z = $(".inscreen :first").replaceWith($(".inscreen div:nth-child(2)"));
+		$(".inscreen :first").after(z);
+	});
+
 });
