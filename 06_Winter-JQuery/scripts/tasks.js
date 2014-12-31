@@ -18,5 +18,8 @@ $(document).ready(function() {
 
 //task_07
 	$("#dynamiccontent").append('<button id="addbutton"> Dont press it! </button>');
+	
+//task_08
+	$("#dynamiccontent").append('<ul id="posts"></ul>');
 
 });
