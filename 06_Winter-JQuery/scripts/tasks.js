@@ -21,5 +21,10 @@ $(document).ready(function() {
 	
 //task_08
 	$("#dynamiccontent").append('<ul id="posts"></ul>');
+	
+//task_09
+	$("ul#menu-top-level-menu a:last").click(function() {
+		alert("hello world");
+	});	
 
 });
