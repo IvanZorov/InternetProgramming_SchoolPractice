@@ -15,5 +15,8 @@ $(document).ready(function() {
 
 //task_06
 	$("#dynamiccontent").append('<input id="textinput"></input>');	
-	
+
+//task_07
+	$("#dynamiccontent").append('<button id="addbutton"> Dont press it! </button>');
+
 });
