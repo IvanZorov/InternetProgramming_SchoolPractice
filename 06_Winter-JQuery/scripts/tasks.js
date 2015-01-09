@@ -69,6 +69,7 @@ $(document).ready(function() {
 */
 
 //task_14
+/*
 	$("#addbutton").click(function(){
 		var tin = $("#textinput").val();
 		if (tin == null || tin == ""){
@@ -85,6 +86,30 @@ $(document).ready(function() {
     			$.get(web2,function(result){
     					var sveg = $(result).attr("title");
     					$("#posts").append('<li> '+sveg+' </li>');
+    			});
+    		});
+		}
+	});
+*/
+
+//task_15
+	$("#addbutton").click(function(){
+		var tin = $("#textinput").val();
+		if (tin == null || tin == ""){
+			alert("you must enter text");
+		} else {
+			$.post(web, {
+				    "userId": 1,
+				    "id": 3,
+    				"title": tin,
+    				"body": "..."
+    		},function(result){
+    			var rezil = $(result).attr("id");
+    			var web2 = "http://jsonplaceholder.typicode.com/posts/" + rezil;
+    			$.get(web2,function(result){
+    					var sveg = $(result).attr("title");
+    					$("#posts").append('<li> '+(sveg)+' </li>');
+    					$("#posts :last").append('<button onclick=alert("deleting")> X </button>');
     			});
     		});
 		}
