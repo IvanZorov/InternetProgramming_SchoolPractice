@@ -41,4 +41,12 @@ $(document).ready(function() {
 		}
 	});
 	
+//task_12
+	$("#addbutton").click(function(){
+		var tin = $("#textinput").val();
+		if (tin == null || tin == ""){
+			alert("you must enter text");
+		}
+	});
+
 });
