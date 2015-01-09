@@ -33,4 +33,12 @@ $(document).ready(function() {
 		$(".inscreen :first").after(z);
 	});
 
+//task_11
+	var web =  "http://jsonplaceholder.typicode.com/posts" ;
+	$.get(web,function(result){
+		for (var i=0;i<5;i++) {
+			$("#posts").append('<li> '+$(result[i]).attr("title")+' </li>');
+		}
+	});
+	
 });
