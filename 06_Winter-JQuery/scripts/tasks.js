@@ -52,18 +52,41 @@ $(document).ready(function() {
 */
 
 //task_13
+/*
 	$("#addbutton").click(function(){
 		var tin = $("#textinput").val();
 		if (tin == null || tin == ""){
 			alert("you must enter text");
 		} else {
 			$.post(web, {
-				    "userId": 1,
+				"userId": 1,
     				"id": 3,
     				"title": tin,
     				"body": "..."
     			})
 		}
 	});	
+*/
 
+//task_14
+	$("#addbutton").click(function(){
+		var tin = $("#textinput").val();
+		if (tin == null || tin == ""){
+			alert("you must enter text");
+		} else {
+			$.post(web, {
+				"userId": 1,
+				"id": 3,
+    				"title": tin,
+    				"body": "..."
+    		},function(result){
+    			var rezil = $(result).attr("id");
+    			var web2 = "http://jsonplaceholder.typicode.com/posts/" + rezil;
+    			$.get(web2,function(result){
+    					var sveg = $(result).attr("title");
+    					$("#posts").append('<li> '+sveg+' </li>');
+    			});
+    		});
+		}
+	});
 });
