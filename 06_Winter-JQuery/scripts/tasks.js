@@ -103,15 +103,15 @@ $(document).ready(function() {
 				    "id": 3,
     				"title": tin,
     				"body": "..."
-    		},function(result){
-    			var rezil = $(result).attr("id");
-    			var web2 = "http://jsonplaceholder.typicode.com/posts/" + rezil;
-    			$.get(web2,function(result){
+    			},function(result){
+    				var rezil = $(result).attr("id");
+    				var web2 = "http://jsonplaceholder.typicode.com/posts/" + rezil;
+    				$.get(web2,function(result){
     					var sveg = $(result).attr("title");
     					$("#posts").append('<li> '+(sveg)+' </li>');
     					$("#posts :last").append('<button onclick=alert("deleting")> X </button>');
+    				});
     			});
-    		});
 		}
 	});
 });
