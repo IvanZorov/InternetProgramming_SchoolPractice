@@ -132,7 +132,7 @@ $(document).ready(function() {
     				var rezil = $(result).attr("id");
     				var web2 = "http://jsonplaceholder.typicode.com/posts/" + rezil;
     				$.get(web2,function(result){
-    					var sveg = $(result).attr("title");;
+    					var sveg = $(result).attr("title");
     					var $button = $('<button>X</button>').click(function () { zap(web2, $button); })
     					$("#posts").append($('<li> '+(sveg)+' </li>').append($button));
 
@@ -141,7 +141,7 @@ $(document).ready(function() {
 		}
 	});
 	function zap(web2, $button) { 
-		var r = confirm("deleting");;
+		var r = confirm("deleting");
 		if (r == true) {
 			$.ajax({
     			url: web2,
@@ -180,5 +180,19 @@ $(document).ready(function() {
 			}
 		});
 	});
-	
+
+//task_20
+	$("#input666").change(function(){
+		var inval = $("#input666").val();
+		var web3 = "http://jsonplaceholder.typicode.com/posts?userId=" + inval ;
+		$("li").remove();
+		$.get(web3, function(result){
+			for (var i=0; i<result.length; i++){
+				var web4 = web + "/" + $(result[i]).attr("id");
+				var $button = $('<button>X</button>').click(function () { zap(web4, $button); })
+				$("#posts").append($('<li> '+$(result[i]).attr("title")+' </li>').append($button));
+			}
+		});
+	});
+
 });
