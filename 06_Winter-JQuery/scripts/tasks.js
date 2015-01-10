@@ -152,4 +152,8 @@ $(document).ready(function() {
 			});
 		}
 	}
+	
+//task_17
+	$("#posts").prepend('<input id="input666"></input');
+	
 });
