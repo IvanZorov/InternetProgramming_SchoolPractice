@@ -156,4 +156,14 @@ $(document).ready(function() {
 //task_17
 	$("#posts").prepend('<input id="input666"></input');
 	
+//task_18
+	$("#input666").change(function(){
+		var inval = $("#input666").val();
+		var web3 = "http://jsonplaceholder.typicode.com/posts?userId=" + inval ;
+		$.get(web3, function(result){
+			for (var i=0; i<result.length; i++){
+				$("#posts").append('<li> '+$(result[i]).attr("title")+' </li>');
+			}
+		});
+	});	
 });
