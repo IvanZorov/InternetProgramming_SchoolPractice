@@ -170,6 +170,7 @@ $(document).ready(function() {
 */
 
 //task_19
+/*
 	$("#input666").change(function(){
 		var inval = $("#input666").val();
 		var web3 = "http://jsonplaceholder.typicode.com/posts?userId=" + inval ;
@@ -180,6 +181,7 @@ $(document).ready(function() {
 			}
 		});
 	});
+*/
 
 //task_20
 	$("#input666").change(function(){
