@@ -189,11 +189,13 @@ $(document).ready(function() {
 		var web3 = "http://jsonplaceholder.typicode.com/posts?userId=" + inval ;
 		$("li").remove();
 		$.get(web3, function(result){
-			for (var i=0; i<result.length; i++){
-				var web4 = web + "/" + $(result[i]).attr("id");
+			 $.each(result, function() {
+				var next = this;
+
+				var web4 = web + "/" + $(next).attr("id");
 				var $button = $('<button>X</button>').click(function () { zap(web4, $button); })
-				$("#posts").append($('<li> '+$(result[i]).attr("title")+' </li>').append($button));
-			}
+				$("#posts").append($('<li> '+$(next).attr("title")+' </li>').append($button));
+			});
 		});
 	});
 
