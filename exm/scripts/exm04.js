@@ -17,6 +17,9 @@ $(document).ready(function() {
 				var sunrise = $(sys).attr("sunrise");
 				var sunset = $(sys).attr("sunset");
 
+				var risetime = timeConverter(sunrise);
+				var settime = timeConverter(sunset);
+
 				var main = $(result).attr("main");
 				var mintemp = $(main).attr("temp_min")
 				var maxtemp = $(main).attr("temp_max")
@@ -24,8 +27,8 @@ $(document).ready(function() {
 				var wind = $(result).attr("wind");
 				var wspd = $(wind).attr("speed");
 
-				$("#3").append('<div> Sunrise: '+sunrise+' </div>');			
-				$("#3").append('<div> Sunset: '+sunset+' </div>');			
+				$("#3").append('<div> Sunrise: '+risetime+' </div>');		
+				$("#3").append('<div> Sunset: '+settime+' </div>');			
 				$("#3").append('<div> min temp: '+mintemp+' </div>');
 				$("#3").append('<div> max temp: '+maxtemp+' </div>');
 				$("#3").append('<div> wind speed: '+wspd+' </div>');
@@ -33,5 +36,13 @@ $(document).ready(function() {
 
 		});
 	});
+
+	function timeConverter(UNIX_timestamp){
+		var a = new Date(UNIX_timestamp*1000);
+		var hour = a.getHours();
+		var min = a.getMinutes();
+		var time = hour + ':' + min;
+		return time;
+	}
 
 });
